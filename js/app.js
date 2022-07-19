@@ -1,5 +1,7 @@
 'use strict';
 
+let storeDiv = document.getElementById('store');
+
 // random number generator function grabbed from MDN docs
 function randomCustPerHour(min, max){
   return Math.floor(Math.random() * (max - min +1) + min);
@@ -7,6 +9,7 @@ function randomCustPerHour(min, max){
 
 
 let seattle = {
+  name: 'Seattle',
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
   minCust: 23,
   maxCust: 65,
@@ -28,14 +31,31 @@ let seattle = {
   //  console.log(this.cookiesSoldPerHour);
   },
 
-}
+  render: function(){
+    let divElem = document.createElement('div');
+    storeDiv.appendChild(divElem);
+
+    let h1Elem = document.createElement('h1');
+    h1Elem.textContent = this.name;
+    divElem.appendChild(h1Elem);
+
+    let ulElem = document.createElement('ul');
+    divElem.appendChild(ulElem);
+
+    for(let i = 0; i < this.hours.length; i++){
+      let liElem = document.createElement('li');
+      liElem.textContent = `${this.hours[i]}: ${Math.floor(this.cookiesSoldPerHour[i])} cookies`;
+      ulElem.appendChild(liElem);
+    }
+
+  },
 
 
-
-// seattle.cookiesSoldPerHour();
+};
 
 seattle.getCustPerHour();
 seattle.getCookiesSoldPerHour();
+seattle.render();
 console.log(seattle);
 
 console.log(seattle.avgCookieSale);
@@ -46,6 +66,7 @@ console.log(seattle.custPerHour);
 
 
 let tokyo = {
+  name: 'Tokyo',
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
   minCust: 3,
   maxCust: 24,
@@ -66,6 +87,7 @@ let tokyo = {
 };
 
 let dubai = {
+  name: 'Dubai',
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
   minCust: 11,
   maxCust: 38,
@@ -86,6 +108,7 @@ let dubai = {
 };
 
 let paris = {
+  name: 'Paris',
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
   minCust: 20,
   maxCust: 38,
@@ -106,6 +129,7 @@ let paris = {
 };
 
 let lima = {
+  name: 'Lima',
   hours: ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'],
   minCust: 2,
   maxCust: 16,
