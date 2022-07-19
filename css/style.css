@@ -1,0 +1,5 @@
+ul li {
+  list-style: disc outside none;
+  display: list-item;
+  margin-left: 1em;
+  }
