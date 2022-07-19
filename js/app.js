@@ -23,10 +23,16 @@ let seattle = {
   },
 
   getCookiesSoldPerHour: function(){
+    this.total = 0;
+
     for(let i = 0; i <= this.hours.length; i++){
       this.getCustPerHour();
-      this.cookiesSoldPerHour.push(this.custPerHour * this.avgCookieSale);
+      let cookiePerHour = (Math.floor(this.custPerHour * this.avgCookieSale));
+      this.cookiesSoldPerHour.push(cookiePerHour);
+      this.total += cookiePerHour;
+
     }
+
 
   //  console.log(this.cookiesSoldPerHour);
   },
@@ -44,10 +50,13 @@ let seattle = {
 
     for(let i = 0; i < this.hours.length; i++){
       let liElem = document.createElement('li');
-      liElem.textContent = `${this.hours[i]}: ${Math.floor(this.cookiesSoldPerHour[i])} cookies`;
+      liElem.textContent = `${this.hours[i]}: ${this.cookiesSoldPerHour[i]} cookies`;
       ulElem.appendChild(liElem);
     }
 
+    let liElem = document.createElement('li');
+    liElem.textContent = `Total: ${this.total}`;
+    ulElem.appendChild(liElem);
   },
 
 
