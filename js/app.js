@@ -1,7 +1,7 @@
 'use strict';
 
-// Link to the SVGAnimatedLengthList.html page
-let storeDiv = document.getElementById('store');
+let renderHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
 
 // random number generator function grabbed from MDN docs
 function randomCustPerHour(min, max){
@@ -42,27 +42,64 @@ Store.prototype.getCookiesSoldPerHour = function(){
   }
 };
 
+// Link to the sales.html page
+let storeDiv = document.getElementById('store');
+
+// Create table and append to the div on sales.html
+let tableElem = document.createElement('table');
+storeDiv.appendChild(tableElem);
+
+// Write a function for the header row
+function headerRow(){
+
+  let row1 = document.createElement('tr');
+  tableElem.appendChild(row1);
+
+  let thEmptyCell = document.createElement('th');
+  row1.appendChild(thEmptyCell);
+
+  for(let i = 0; i < renderHours.length; i++){
+    let th1Elem = document.createElement('th');
+    th1Elem.textContent = `${renderHours[i]}`;
+    row1.appendChild(th1Elem);
+  }
+}
+
+// Function for the table of all stores' information
 Store.prototype.render = function(){
-  let divElem = document.createElement('div');
-  storeDiv.appendChild(divElem);
 
-  let h1Elem = document.createElement('h1');
-  h1Elem.textContent = this.city;
-  divElem.appendChild(h1Elem);
+  let row2 = document.createElement('tr');
+  tableElem.appendChild(row2);
 
-  let ulElem = document.createElement('ul');
-  divElem.appendChild(ulElem);
+  let tdCityName = document.createElement('td');
+  tdCityName.textContent = `${this.city}`;
+  row2.appendChild(tdCityName);
 
   for(let i = 0; i < this.hours.length; i++){
-    let liElem = document.createElement('li');
-    liElem.textContent = `${this.hours[i]}: ${this.cookiesSoldPerHour[i]} cookies`;
-    ulElem.appendChild(liElem);
+    let tdCookiesPerHour = document.createElement('td');
+    tdCookiesPerHour.textContent = `${this.cookiesSoldPerHour[i]}`;
+    row2.appendChild(tdCookiesPerHour);
   }
-
-  let liElem = document.createElement('li');
-  liElem.textContent = `Total: ${this.total}`;
-  ulElem.appendChild(liElem);
+ 
 };
+
+// Write a function for the footer row
+function footerRow(){
+
+  let row3 = document.createElement('tr');
+  tableElem.appendChild(row3);
+
+  let tdTotal = document.createElement('td');
+  tdTotal.textContent = 'TOTALS:';
+  row3.appendChild(tdTotal);
+
+//   for(let i = 0; i <= Store.length; i++){
+//     let tf1Elem = document.createElement('td');
+//     tf1Elem.textContent = `${renderHours[i]}`;
+//     row3.appendChild(tf1Elem);
+//   }
+
+}
 
 // Create an object for each city's store
 
@@ -84,9 +121,9 @@ function renderStore(){
 }
 
 // Call all functions
-
+headerRow();
 renderStore();
-
+footerRow();
 
 
 
