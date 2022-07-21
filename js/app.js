@@ -66,7 +66,7 @@ function headerRow(){
   }
 
   let tdTotal = document.createElement('td');
-  tdTotal.textContent = 'GRAND TOTALS:';
+  tdTotal.textContent = 'TOTAL / day:';
   row1.appendChild(tdTotal);
 
 }
@@ -77,7 +77,7 @@ Store.prototype.render = function(){
   let row2 = document.createElement('tr');
   tableElem.appendChild(row2);
 
-  let tdCityName = document.createElement('td');
+  let tdCityName = document.createElement('th');
   tdCityName.textContent = `${this.city}`;
   row2.appendChild(tdCityName);
 
@@ -100,7 +100,7 @@ function footerRow(){
   let row3 = document.createElement('tr');
   tableElem.appendChild(row3);
 
-  let tdTotal = document.createElement('td');
+  let tdTotal = document.createElement('th');
   tdTotal.textContent = 'TOTALS / Hr:';
   row3.appendChild(tdTotal);
 
@@ -118,7 +118,7 @@ function footerRow(){
     row3.appendChild(tdDailyTotals);
   }
 
-  let GrandTotal = document.createElement('td');
+  let GrandTotal = document.createElement('th');
   GrandTotal.textContent = `${grandTotal}`;
   row3.appendChild(GrandTotal);
 }
