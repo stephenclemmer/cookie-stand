@@ -66,7 +66,7 @@ function headerRow(){
   }
 
   let tdTotal = document.createElement('td');
-  tdTotal.textContent = 'TOTAL / Day:';
+  tdTotal.textContent = 'GRAND TOTALS:';
   row1.appendChild(tdTotal);
 
 }
@@ -104,17 +104,23 @@ function footerRow(){
   tdTotal.textContent = 'TOTALS / Hr:';
   row3.appendChild(tdTotal);
 
+  let grandTotal = 0;
 
   for(let i = 0; i < renderHours.length; i++){
     let total = 0;
     for(let j = 0; j < storeInfo.length; j++){
       total = total + storeInfo[j].cookiesSoldPerHour[i];
+      grandTotal = grandTotal + storeInfo[j].cookiesSoldPerHour[i];
     }
 
     let tdDailyTotals = document.createElement('td');
     tdDailyTotals.textContent = `${total}`;
     row3.appendChild(tdDailyTotals);
   }
+
+  let GrandTotal = document.createElement('td');
+  GrandTotal.textContent = `${grandTotal}`;
+  row3.appendChild(GrandTotal);
 }
 
 // Create an object for each city's store
