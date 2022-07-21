@@ -64,6 +64,11 @@ function headerRow(){
     th1Elem.textContent = `${renderHours[i]}`;
     row1.appendChild(th1Elem);
   }
+
+  let tdTotal = document.createElement('td');
+  tdTotal.textContent = 'TOTAL / Day:';
+  row1.appendChild(tdTotal);
+
 }
 
 // Function for the table of all stores' information
@@ -82,6 +87,11 @@ Store.prototype.render = function(){
     row2.appendChild(tdCookiesPerHour);
   }
  
+  let tdDailyTotal = document.createElement('td');
+  tdDailyTotal.textContent = `${this.total}`;
+  row2.appendChild(tdDailyTotal);
+
+  console.log(storeInfo);
 };
 
 // Write a function for the footer row
@@ -91,7 +101,7 @@ function footerRow(){
   tableElem.appendChild(row3);
 
   let tdTotal = document.createElement('td');
-  tdTotal.textContent = 'TOTALS:';
+  tdTotal.textContent = 'TOTALS / Hr:';
   row3.appendChild(tdTotal);
 
 
