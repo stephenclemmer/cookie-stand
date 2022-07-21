@@ -3,6 +3,7 @@
 let renderHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 
+
 // random number generator function grabbed from MDN docs
 function randomCustPerHour(min, max){
   return Math.floor(Math.random() * (max - min +1) + min);
@@ -93,12 +94,17 @@ function footerRow(){
   tdTotal.textContent = 'TOTALS:';
   row3.appendChild(tdTotal);
 
-//   for(let i = 0; i <= Store.length; i++){
-//     let tf1Elem = document.createElement('td');
-//     tf1Elem.textContent = `${renderHours[i]}`;
-//     row3.appendChild(tf1Elem);
-//   }
 
+  for(let i = 0; i < renderHours.length; i++){
+    let total = 0;
+    for(let j = 0; j < storeInfo.length; j++){
+      total = total + storeInfo[j].cookiesSoldPerHour[i];
+    }
+
+    let tdDailyTotals = document.createElement('td');
+    tdDailyTotals.textContent = `${total}`;
+    row3.appendChild(tdDailyTotals);
+  }
 }
 
 // Create an object for each city's store
