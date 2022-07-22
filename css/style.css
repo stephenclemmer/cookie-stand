@@ -2,4 +2,233 @@ ul li {
   list-style: disc outside none;
   display: list-item;
   margin-left: 1em;
+  list-style: none;
   }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif
+  }
+  
+  h1 h2 h3 h4 h5 h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  header {
+    height: 100px;
+    background-color: lightblue;
+  }
+
+  header nav img {
+    height: auto;
+    width: auto;
+    max-height: 60px;
+    max width: 180px;
+  }
+  
+  nav {
+    width: 800px;
+    margin: auto;
+  }
+  
+  nav img {
+    float: left;
+    margin-top: 15px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-evenly
+    
+  }
+  
+  nav ul li {
+    padding: 40px;
+  }
+  
+  main {
+    width: 960px;
+    margin: auto;
+  }
+  
+  main h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: xx-large
+  }
+
+  main img {
+    margin-top: 30px;
+  }
+  
+  main ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  main li {
+    list-style: none;
+  }
+  
+  section {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  section div {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  main section div img {
+    height: 200px;
+    width: 300px;
+    margin-right: 30px;
+  }
+
+  li img {
+    height: 200px;
+    width: 300px;
+    margin-right: 30px;
+  }
+  
+  article {
+    margin-top: 30px;
+    height: 200px;
+    width: 300;
+  }
+  
+  article header {
+    height: 20px;
+    margin-bottom: 5px;
+    background-color: salmon;
+    font-weight: bold;
+  }
+  
+  article p {
+    height: 200px;
+    overflow: auto;
+  }
+  
+  button {
+    transition: 350ms;
+    width: auto;
+    padding: 5px 20px;
+    color: black;
+    background-color: lightblue;
+  }
+  
+  button:hover {
+    color: black;
+    background-color: red;
+  
+  }
+  
+  footer {
+    height: 130px;
+    background-color: rgb(99, 95, 95);
+  }
+
+fieldset {
+
+}
+
+  input[type=text] {
+  background-color: white;
+  background-image: url('img/salmon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+  
+  input[type=text]:focus {
+    background-color: lightblue;
+  }
+
+  @media screen and (min-width: 480px) {
+    body {
+      background-color: salmon;
+    }
+  }
+
+footer {
+  background-color: lightblue;
+}
+
+  footer ul{
+    display: flex;
+    justify-content: space-around;
+    
+   
+  }
+
+  footer li {
+    list-style: none;
+    margin-top: 40px;
+  }
+
+  footer img {
+    height: auto;
+    width: auto;
+    max-height: 70px;
+    max width: 200px;
+  }
+
+  footer p {
+    text-align: center;
+  }
+
+  /* FORM */
+
+  form {
+    text-align: right;
+    width: 80%;
+  }
+
+  form div {
+    margin-bottom: 10px;
+  }
+
+  form button {
+  width: 3000 px;
+  text-align: center;
+  margin-top: 10 px;
+  
+  }
+  input {
+    justify-content: ;
+    width:50%;
+  }
+
+  .container {
+    height: 200px;
+    position: relative;
+    margin-left: 30px;
+   
+  }
+
+  legend {
+    text-align: right;
+    font-size: xx-large
+  }
+
+  /* table */
+
+tr {
+  background-color: white;
+}
+  th {
+  border: solid;
+  text-align: center;
+}
+
+td {
+  border: solid;
+  padding: 5px 10px;
+  text-align: center;
+}
+  

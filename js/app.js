@@ -103,8 +103,8 @@ function footerRow(){
   row3.id = 'lastRow';
   tableElem.appendChild(row3);
 
-  let tdTotal = document.createElement('th');
-  tdTotal.textContent = 'TOTALS / Hr:';
+  let tdTotal = document.createElement('td');
+  tdTotal.textContent = 'TOTALS';
   row3.appendChild(tdTotal);
 
   let grandTotal = 0;
@@ -121,7 +121,7 @@ function footerRow(){
     row3.appendChild(tdDailyTotals);
   }
 
-  let GrandTotal = document.createElement('th');
+  let GrandTotal = document.createElement('td');
   GrandTotal.textContent = `${grandTotal}`;
   row3.appendChild(GrandTotal);
 }
