@@ -2,7 +2,10 @@
 
 let renderHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12am', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+let myform = document.getElementById('my-form');
 
+// Link to the sales.html page
+let storeDiv = document.getElementById('store');
 
 // random number generator function grabbed from MDN docs
 function randomCustPerHour(min, max){
@@ -43,8 +46,7 @@ Store.prototype.getCookiesSoldPerHour = function(){
   }
 };
 
-// Link to the sales.html page
-let storeDiv = document.getElementById('store');
+
 
 // Create table and append to the div on sales.html
 let tableElem = document.createElement('table');
@@ -98,6 +100,7 @@ Store.prototype.render = function(){
 function footerRow(){
 
   let row3 = document.createElement('tr');
+  row3.id = 'lastRow';
   tableElem.appendChild(row3);
 
   let tdTotal = document.createElement('th');
@@ -146,6 +149,39 @@ function renderStore(){
 headerRow();
 renderStore();
 footerRow();
+
+
+// FORM
+
+// Add the event listener
+myform.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event){
+  event.preventDefault();
+
+  let city = event.target.city.value;
+  let minCust = event.target.minCust.value;
+  let maxCust = event.target.maxCust.value;
+  let avgCookieSale = event.target.avgCookieSale.value;
+
+  let newStore = new Store(city, minCust, maxCust, avgCookieSale);
+
+
+
+  
+  newStore.getCustPerHour();
+  newStore.getCookiesSoldPerHour();
+  newStore.render();
+  
+  let row = document.getElementById('lastRow');
+  console.log(row);
+  row.remove();  
+
+  footerRow();
+
+}
+
+
 
 
 
