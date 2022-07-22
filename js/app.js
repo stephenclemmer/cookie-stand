@@ -139,8 +139,8 @@ let lima = new Store('Lima', 2, 16, 4.6);
 function renderStore(){
   for(let i = 0; i < storeInfo.length; i++){
     let currentStore = storeInfo[i];
-    currentStore.getCustPerHour();
     currentStore.getCookiesSoldPerHour();
+    currentStore.getCustPerHour();
     currentStore.render();
   }
 }
@@ -160,19 +160,16 @@ function handleSubmit(event){
   event.preventDefault();
 
   let city = event.target.city.value;
-  let minCust = event.target.minCust.value;
-  let maxCust = event.target.maxCust.value;
+  let minCust = parseInt(event.target.minCust.value);
+  let maxCust = parseInt(event.target.maxCust.value);
   let avgCookieSale = event.target.avgCookieSale.value;
 
   let newStore = new Store(city, minCust, maxCust, avgCookieSale);
 
-
-
-  
   newStore.getCustPerHour();
   newStore.getCookiesSoldPerHour();
   newStore.render();
-  
+
   let row = document.getElementById('lastRow');
   console.log(row);
   row.remove();  
