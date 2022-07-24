@@ -1,140 +1,145 @@
-ul li {
-  list-style: disc outside none;
-  display: list-item;
-  margin-left: 1em;
+img {
+  border: 5px;
+  border-style: solid;
+}
+
+
+  h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: darkblue;
+  font-weight: bold;
+}
+
+p {
+  font-family:'Times New Roman', Times, serif;
+}
+
+header nav img {
+  height: auto;
+  width: auto;
+  max-height: 60px;
+  max-width: 180px;
+  border: none;
+}
+
+nav {
+  width: 800px;
+  margin: auto;
+  
+}
+
+nav img {
+  float: left;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly
+  
+}
+
+nav ul li {
+  padding: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+  font-weight: bold;
+}
+
+header {
+  height: 100px;
+  background-color: lightblue;
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+  font-size: x-large;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+}
+
+main h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: xx-large
+}
+
+main img {
+  margin-top: 50px;
+}
+
+main ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+main li {
   list-style: none;
-  }
+}
 
-  body {
-    font-family: Arial, Helvetica, sans-serif
-  }
-  
-  h1 h2 h3 h4 h5 h6 {
-    font-family: 'Montserrat', sans-serif;
-  }
+section {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
 
-  header {
-    height: 100px;
-    background-color: lightblue;
-  }
+section div {
+  display: flex;
+  justify-content: space-between;
+}
 
-  header nav img {
-    height: auto;
-    width: auto;
-    max-height: 60px;
-    max width: 180px;
-  }
-  
-  nav {
-    width: 800px;
-    margin: auto;
-  }
-  
-  nav img {
-    float: left;
-    margin-top: 15px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  nav ul {
-    display: flex;
-    justify-content: space-evenly
-    
-  }
-  
-  nav ul li {
-    padding: 40px;
-  }
-  
-  main {
-    width: 960px;
-    margin: auto;
-  }
-  
-  main h1 {
-    text-align: center;
-    margin-top: 30px;
-    font-size: xx-large
-  }
+main section div img {
+  height: 200px;
+  width: 300px;
+  margin-right: 30px;
+}
 
-  main img {
-    margin-top: 30px;
-  }
-  
-  main ul {
-    display: flex;
-    justify-content: space-between;
-  }
+li img {
+  height: 200px;
+  width: 300px;
+  margin-right: 30px;
+}
 
-  main li {
-    list-style: none;
-  }
-  
-  section {
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  section div {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  main section div img {
-    height: 200px;
-    width: 300px;
-    margin-right: 30px;
-  }
+article {
+  margin-top: 30px;
+  height: 200px;
+  width: 300;
+}
 
-  li img {
-    height: 200px;
-    width: 300px;
-    margin-right: 30px;
-  }
-  
-  article {
-    margin-top: 30px;
-    height: 200px;
-    width: 300;
-  }
-  
-  article header {
-    height: 20px;
-    margin-bottom: 5px;
-    background-color: salmon;
-    font-weight: bold;
-  }
-  
-  article p {
-    height: 200px;
-    overflow: auto;
-  }
-  
-  button {
-    transition: 350ms;
-    width: auto;
-    padding: 5px 20px;
-    color: black;
-    background-color: lightblue;
-  }
-  
-  button:hover {
-    color: black;
-    background-color: red;
-  
-  }
-  
-  footer {
-    height: 130px;
-    background-color: rgb(99, 95, 95);
-  }
+article header {
+  height: 20px;
+  margin-bottom: 5px;
+  background-color: whitesmoke;
+  font-weight: bold;
+}
 
-fieldset {
+article p {
+  height: 200px;
+  overflow: auto;
+}
 
+button {
+  transition: 350ms;
+  width: auto;
+  padding: 5px 20px;
+  color: black;
+  background-color: salmon;
+}
+
+button:hover {
+  color: white;
+  background-color: blue;
+}
+
+footer {
+  height: 130px;
+  background-color: rgb(99, 95, 95);
 }
 
   input[type=text] {
@@ -144,85 +149,93 @@ fieldset {
   background-repeat: no-repeat;
   padding-left: 40px;
 }
+
+legend {
+  margin-top: 30px;
+}
   
-  input[type=text]:focus {
-    background-color: lightblue;
-  }
-
-  @media screen and (min-width: 480px) {
-    body {
-      background-color: salmon;
-    }
-  }
-
-footer {
+input[type=text]:focus {
   background-color: lightblue;
 }
 
-  footer ul{
-    display: flex;
-    justify-content: space-around;
-    
-   
+@media screen and (min-width: 480px) {
+  body {
+    background-color: whitesmoke;
   }
+}
 
-  footer li {
-    list-style: none;
-    margin-top: 20px;
-  }
+footer {
+  background-color: lightblue;
+  margin-top: 30px;
+}
 
-  footer img {
-    height: auto;
-    width: auto;
-    max-height: 70px;
-    max width: 200px;
-  }
+footer ul{
+  display: flex;
+  justify-content: space-evenly;
+}
 
-  footer p {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30 px;;
-  }
+footer li {
+  list-style: none;
+  margin-top: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+  font-weight: bold;
+  font-size: large;
+}
+
+footer img {
+  height: auto;
+  width: auto;
+  max-height: 70px;
+  max width: 200px;
+}
+
+footer p {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30 px;;
+}
 
   /* FORM */
 
-  form {
-    text-align: right;
-    width: 80%;
-  }
+form {
+  text-align: right;
+  width: 80%;
+}
 
-  form div {
-    margin-bottom: 10px;
-  }
+form div {
+  margin-bottom: 10px;
+}
 
-  form button {
-  width: 3000 px;
-  text-align: center;
-  margin-top: 10 px;
+form button {
+width: 3000 px;
+text-align: center;
+margin-top: 10 px;
+}
+
+input {
+  justify-content: ;
+  width:50%;
+}
+
+.container {
+  height: 200px;
+  position: relative;
+  margin-left: 30px;
   
-  }
-  input {
-    justify-content: ;
-    width:50%;
-  }
+}
 
-  .container {
-    height: 200px;
-    position: relative;
-    margin-left: 30px;
-   
-  }
+legend {
+  text-align: right;
+  font-size: xx-large
+}
 
-  legend {
-    text-align: right;
-    font-size: xx-large
-  }
-
-  /* table */
+/* table */
 
 tr {
-  background-color: white;
+  background-color: yellow;
 }
+
   th {
   border: solid;
   text-align: center;
@@ -234,3 +247,7 @@ td {
   text-align: center;
 }
   
+#store {
+  margin-left: 40px;
+  margin-top: 60px;
+}
