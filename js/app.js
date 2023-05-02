@@ -38,10 +38,13 @@ Store.prototype.getCustPerHour = function(){
 
 Store.prototype.getCookiesSoldPerHour = function(){
 
+  // Should this be simply less than, rather than less than or equal to?
   for(let i = 0; i <= this.hours.length; i++){
     this.getCustPerHour();
     let cookiePerHour = (Math.floor(this.custPerHour * this.avgCookieSale));
+    // is this code below doing anything? where is the cookiessoldperhour array?
     this.cookiesSoldPerHour.push(cookiePerHour);
+
     this.total += cookiePerHour;
   }
 };
