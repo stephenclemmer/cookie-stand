@@ -55,21 +55,24 @@ Store.prototype.getCookiesSoldPerHour = function(){
 let tableElem = document.createElement('table');
 storeDiv.appendChild(tableElem);
 
-// Write a function for the header row
+// Write a function for the header in row one
 function headerRow(){
 
   let row1 = document.createElement('tr');
   tableElem.appendChild(row1);
 
+  // Renders a single emplty cell in row one
   let thEmptyCell = document.createElement('th');
   row1.appendChild(thEmptyCell);
 
+  // Renders the hours in the chart in row one
   for(let i = 0; i < renderHours.length; i++){
     let th1Elem = document.createElement('th');
     th1Elem.textContent = `${renderHours[i]}`;
     row1.appendChild(th1Elem);
   }
 
+  // Renders the 'Total/ day:' cell at the end of row one
   let tdTotal = document.createElement('td');
   tdTotal.textContent = 'TOTAL / day:';
   row1.appendChild(tdTotal);
@@ -86,12 +89,14 @@ Store.prototype.render = function(){
   tdCityName.textContent = `${this.city}`;
   row2.appendChild(tdCityName);
 
+  // populates the cookies sold each hour in a store
   for(let i = 0; i < this.hours.length; i++){
     let tdCookiesPerHour = document.createElement('td');
     tdCookiesPerHour.textContent = `${this.cookiesSoldPerHour[i]}`;
     row2.appendChild(tdCookiesPerHour);
   }
  
+  // uses this.total to populate the cell with the store's total.
   let tdDailyTotal = document.createElement('td');
   tdDailyTotal.textContent = `${this.total}`;
   row2.appendChild(tdDailyTotal);
@@ -139,6 +144,7 @@ let lima = new Store('Lima', 2, 16, 4.6);
 
 // Create a function that calls the functions needed in each created object
 
+// this is what populates each store based on the number of stores in the storeInfo array.
 function renderStore(){
   for(let i = 0; i < storeInfo.length; i++){
     let currentStore = storeInfo[i];
