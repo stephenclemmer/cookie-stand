@@ -80,6 +80,12 @@ function headerRow(){
 }
 
 // Function for the table of all stores' information
+/* The above code is defining a method called `render` for the `Store` object. This method creates a
+new table row element and appends it to the table element. It then creates a table header cell
+element with the name of the store's city and appends it to the row. It then loops through the
+`hours` array of the store object and creates a table data cell element for each hour, populating it
+with the number of cookies sold during that hour. These cells are then appended to the row. Finally,
+a table data cell element is created for the store's total number */
 Store.prototype.render = function(){
 
   let row2 = document.createElement('tr');
@@ -120,6 +126,9 @@ function footerRow(){
   for(let i = 0; i < renderHours.length; i++){
     let total = 0;
     for(let j = 0; j < storeInfo.length; j++){
+     /* The above code is adding the value of `storeInfo[j].cookiesSoldPerHour[i]` to the variable
+     `total`. This code is likely part of a loop that iterates over an array of store information
+     and calculates the total number of cookies sold per hour across all stores. */
       total = total + storeInfo[j].cookiesSoldPerHour[i];
       grandTotal = grandTotal + storeInfo[j].cookiesSoldPerHour[i];
     }
